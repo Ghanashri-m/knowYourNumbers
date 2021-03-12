@@ -33,6 +33,14 @@ img {
     padding: 0 1.5rem;
 }
 
+.number-fact{
+    width: 100%;
+    background-color: rgb(42, 41, 42);
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+  }
+
 .hue-shift {
     animation: hue-shift 5s infinite alternate;
 }

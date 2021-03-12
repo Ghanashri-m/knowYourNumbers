@@ -9,12 +9,15 @@ async function getNumberFact() {
         document.getElementById('dateInput').value = ''
         document.getElementById('yearInput').value = ''
         try {
-            response = await fetch(`http://numbersapi.com/${param}`);
+            response = await fetch(`https://cors-anywhere.herokuapp.com/http://numbersapi.com/${param}`, {
+                headers:{
+                  'x-requested-with': 'text/plain'
+                }
+            });
         } catch(error) {
-            // document.getElementById('number').innerHTML = `<p class="text-area" style="color: red"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  Invalid Input</p`;
         }
         const text = await response.text();
-        document.getElementById('number').innerHTML = `<p class="text-area"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  ${text}</p`;
+        document.getElementById('number').innerHTML = `<p class="text-area"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  Here is an  interesting fact 😎 <br/>${text}</p`;
     } else {
         document.getElementById('date').innerHTML = ``;
         document.getElementById('year').innerHTML = ``;
@@ -38,12 +41,15 @@ async function getDateFact() {
         document.getElementById('yearInput').value = ''
 
         try {
-            response = await fetch(`http://numbersapi.com/${param}/date`);
+            response = await fetch(`https://cors-anywhere.herokuapp.com/http://numbersapi.com/${param}/date`, {
+                headers:{
+                  'x-requested-with': 'text/plain'
+                }
+            });
         } catch(error) {
-            // document.getElementById('date').innerHTML = `<p class="text-area" style="color: red"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  Invalid Input</p`;
         }
         const text = await response.text();
-        document.getElementById('date').innerHTML = `<p class="text-area"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  ${text}</p`;
+        document.getElementById('date').innerHTML = `<p class="text-area"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  Here is an  interesting fact 😎 <br/>${text}</p`;
     } else {
         document.getElementById('number').innerHTML = ``;
         document.getElementById('year').innerHTML = ``;
@@ -68,13 +74,16 @@ async function getYearFact() {
     document.getElementById('dateInput').value = ''
     
     try {
-        response = await fetch(`http://numbersapi.com/${param}/year`);
+        response = await fetch(`https://cors-anywhere.herokuapp.com/http://numbersapi.com/${param}/year`, {
+            headers:{
+                'x-requested-with': 'text/plain'
+            }
+        });
     } catch(error) {
-        // document.getElementById('year').innerHTML = `<p class="text-area" style="color: red"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  Invalid Input</p`;
     }
 
     const text = await response.text();
-    document.getElementById('year').innerHTML = `<p class="text-area"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  ${text}</p`;
+    document.getElementById('year').innerHTML = `<p class="text-area"><i class="fas fa-quote-left" style="padding: 0 10px 5px 0"></i>  Here is an  interesting fact 😎 <br/>${text}</p`;
     } else {
         document.getElementById('date').innerHTML = ``;
         document.getElementById('number').innerHTML = ``;
